@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Psychology — Ch. 6 Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f0e0c;
+    --bg-2:#161412;
+    --bg-card:#1a1816;
+    --bg-card-2:#211e1b;
+    --bg-hover:#252220;
+    --gold:#c9a96e;
+    --gold-soft:#e0c896;
+    --gold-dim:#8a7548;
+    --text:#e8e4dd;
+    --text-muted:#9a948a;
+    --text-faint:#6b665e;
+    --border:#2a2723;
+    --border-soft:#1f1d1a;
+
+    --b1:#c9a96e;   /* Foundations — gold */
+    --b2:#8fa388;   /* Self-Consistency — sage */
+    --b3:#b88787;   /* Cognitive Dissonance — rose */
+    --b4:#8898ad;   /* Self-Awareness — slate */
+
+    --b1-bg:rgba(201,169,110,.08);
+    --b2-bg:rgba(143,163,136,.08);
+    --b3-bg:rgba(184,135,135,.08);
+    --b4-bg:rgba(136,152,173,.08);
+
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'DM Sans', system-ui, sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:15px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:120px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(15,14,12,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1240px;margin:0 auto;
+    padding:18px 32px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .header-top{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .title-block h1{
+    font-family:var(--serif);
+    font-size:26px;font-weight:500;
+    letter-spacing:.5px;
+    color:var(--gold-soft);
+  }
+  .title-block .subtitle{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--text-muted);
+    font-size:15px;
+    margin-top:2px;
+  }
+  .meta{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-faint);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
+
+  .nav-row{
+    display:flex;gap:18px;align-items:center;
+    flex-wrap:wrap;
+  }
+  .branch-filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filter-btn{
+    background:transparent;
+    border:1px solid var(--border);
+    color:var(--text-muted);
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .filter-btn:hover{color:var(--gold);border-color:var(--gold-dim)}
+  .filter-btn.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+  .filter-btn[data-branch="b1"].active{background:var(--b1);color:var(--bg);border-color:var(--b1)}
+  .filter-btn[data-branch="b2"].active{background:var(--b2);color:var(--bg);border-color:var(--b2)}
+  .filter-btn[data-branch="b3"].active{background:var(--b3);color:var(--bg);border-color:var(--b3)}
+  .filter-btn[data-branch="b4"].active{background:var(--b4);color:var(--bg);border-color:var(--b4)}
+
+  .search-box{
+    flex:1;min-width:240px;max-width:380px;
+    position:relative;
+  }
+  .search-box input{
+    width:100%;
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:13px;
+    padding:9px 14px 9px 38px;
+    border-radius:2px;
+    outline:none;
+    transition:border-color .2s;
+  }
+  .search-box input:focus{border-color:var(--gold-dim)}
+  .search-box input::placeholder{color:var(--text-faint)}
+  .search-icon{
+    position:absolute;left:12px;top:50%;transform:translateY(-50%);
+    color:var(--text-faint);font-size:13px;
+  }
+
+  .nav-jump{
+    display:flex;gap:14px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:1.5px;text-transform:uppercase;
+  }
+  .nav-jump a{color:var(--text-faint);text-decoration:none;transition:color .2s}
+  .nav-jump a:hover{color:var(--gold)}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:1180px;margin:0 auto;padding:48px 32px}
+  section{margin-bottom:80px}
+  section h2{
+    font-family:var(--serif);
+    font-size:42px;font-weight:500;
+    letter-spacing:.3px;
+    color:var(--gold-soft);
+    margin-bottom:8px;
+    line-height:1.15;
+  }
+  section h2 .section-num{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--text-faint);
+    display:block;
+    margin-bottom:6px;
+    font-weight:400;
+  }
+  section .section-lede{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:18px;
+    color:var(--text-muted);
+    margin-bottom:36px;
+    max-width:780px;
+    line-height:1.5;
+  }
+
+  /* ---------- BIG PICTURE ---------- */
+  .bigpic-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .bigpic-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-left:3px solid var(--gold);
+    padding:28px 30px;
+    border-radius:2px;
+  }
+  .bigpic-card.full{grid-column:1/-1}
+  .bigpic-card h3{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .bigpic-card p{color:var(--text);font-size:15px;line-height:1.75}
+  .bigpic-card p + p{margin-top:12px}
+  .bigpic-card strong{color:var(--gold-soft);font-weight:500}
+
+  /* ---------- MIND MAP ---------- */
+  .mindmap-wrap{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:3px;
+    padding:32px;
+    margin-bottom:32px;
+  }
+  .mindmap-wrap svg{display:block;width:100%;height:auto;max-height:640px}
+
+  .branch-summary-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+  .branch-summary-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    padding:22px 24px;
+    border-radius:2px;
+    border-top:3px solid;
+  }
+  .branch-summary-card[data-b="1"]{border-top-color:var(--b1)}
+  .branch-summary-card[data-b="2"]{border-top-color:var(--b2)}
+  .branch-summary-card[data-b="3"]{border-top-color:var(--b3)}
+  .branch-summary-card[data-b="4"]{border-top-color:var(--b4)}
+  .branch-summary-card .branch-tag{
+    font-family:var(--mono);
+    font-size:10px;letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .branch-summary-card[data-b="1"] .branch-tag{color:var(--b1)}
+  .branch-summary-card[data-b="2"] .branch-tag{color:var(--b2)}
+  .branch-summary-card[data-b="3"] .branch-tag{color:var(--b3)}
+  .branch-summary-card[data-b="4"] .branch-tag{color:var(--b4)}
+  .branch-summary-card h4{
+    font-family:var(--serif);
+    font-size:24px;font-weight:500;
+    color:var(--gold-soft);
+    margin-bottom:10px;
+    letter-spacing:.3px;
+  }
+  .branch-summary-card p{color:var(--text-muted);font-size:14px;line-height:1.65}
+
+  /* ---------- BRANCH SECTIONS ---------- */
+  .branch-header{
+    display:flex;align-items:flex-start;gap:18px;
+    padding:24px 0;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    margin-bottom:32px;
+  }
+  .branch-num{
+    font-family:var(--serif);
+    font-size:64px;font-weight:400;
+    line-height:1;
+    font-style:italic;
+  }
+  .branch-header[data-b="1"] .branch-num{color:var(--b1)}
+  .branch-header[data-b="2"] .branch-num{color:var(--b2)}
+  .branch-header[data-b="3"] .branch-num{color:var(--b3)}
+  .branch-header[data-b="4"] .branch-num{color:var(--b4)}
+  .branch-header-text{flex:1;padding-top:6px}
+  .branch-header-text .branch-label{
+    font-family:var(--mono);font-size:11px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--text-faint);
+    margin-bottom:4px;
+  }
+  .branch-header-text h2{
+    font-family:var(--serif);
+    font-size:34px;font-weight:500;
+    margin-bottom:0;
+  }
+  .branch-header[data-b="1"] h2{color:var(--b1)}
+  .branch-header[data-b="2"] h2{color:var(--b2)}
+  .branch-header[data-b="3"] h2{color:var(--b3)}
+  .branch-header[data-b="4"] h2{color:var(--b4)}
+
+  .branch-intro{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:18px;
+    color:var(--text-muted);
+    line-height:1.6;
+    max-width:820px;
+    margin-bottom:36px;
+    padding-left:24px;
+    border-left:2px solid;
+  }
+  .branch-intro[data-b="1"]{border-left-color:var(--b1)}
+  .branch-intro[data-b="2"]{border-left-color:var(--b2)}
+  .branch-intro[data-b="3"]{border-left-color:var(--b3)}
+  .branch-intro[data-b="4"]{border-left-color:var(--b4)}
+
+  /* connecting prose between concepts */
+  .bridge{
+    color:var(--text-muted);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:15.5px;
+    margin:14px 0 20px;
+    padding-left:20px;
+    border-left:1px dashed var(--border);
+    line-height:1.6;
+  }
+  .bridge::before{
+    content:"↓ ";color:var(--gold-dim);font-style:normal;font-family:var(--sans);
+  }
+
+  /* ---------- CONCEPT CARDS ---------- */
+  .concept-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:3px;
+    margin-bottom:14px;
+    overflow:hidden;
+    transition:border-color .25s;
+  }
+  .concept-card[data-b="1"]{border-left:3px solid var(--b1)}
+  .concept-card[data-b="2"]{border-left:3px solid var(--b2)}
+  .concept-card[data-b="3"]{border-left:3px solid var(--b3)}
+  .concept-card[data-b="4"]{border-left:3px solid var(--b4)}
+  .concept-card.hidden{display:none}
+
+  .concept-card summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 24px;
+    display:flex;align-items:center;gap:18px;
+    transition:background .15s;
+  }
+  .concept-card summary::-webkit-details-marker{display:none}
+  .concept-card summary:hover{background:var(--bg-hover)}
+  .concept-card[open] summary{
+    background:var(--bg-card-2);
+    border-bottom:1px solid var(--border);
+  }
+  .concept-num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+    min-width:32px;
+    letter-spacing:.5px;
+  }
+  .concept-title{
+    flex:1;
+    font-family:var(--serif);
+    font-size:21px;font-weight:500;
+    color:var(--gold-soft);
+    letter-spacing:.2px;
+  }
+  .concept-card[data-b="1"] .concept-title{color:var(--gold-soft)}
+  .concept-card[data-b="2"] .concept-title{color:#c0d0b9}
+  .concept-card[data-b="3"] .concept-title{color:#dab8b8}
+  .concept-card[data-b="4"] .concept-title{color:#b8c4d4}
+  .concept-tag{
+    font-family:var(--mono);font-size:9px;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--text-faint);
+    padding:4px 9px;border:1px solid var(--border);border-radius:2px;
+  }
+  .toggle-arrow{
+    color:var(--text-faint);font-size:14px;
+    transition:transform .25s;
+  }
+  .concept-card[open] .toggle-arrow{transform:rotate(180deg);color:var(--gold)}
+
+  .concept-body{padding:24px 28px 28px}
+  .concept-body > div + div{margin-top:18px}
+
+  .definition-box{
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    padding:16px 20px;
+    border-radius:2px;
+  }
+  .concept-card[data-b="1"] .definition-box{border-left:2px solid var(--b1)}
+  .concept-card[data-b="2"] .definition-box{border-left:2px solid var(--b2)}
+  .concept-card[data-b="3"] .definition-box{border-left:2px solid var(--b3)}
+  .concept-card[data-b="4"] .definition-box{border-left:2px solid var(--b4)}
+  .definition-box .label{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:8px;display:block;
+  }
+  .definition-box .text{
+    font-family:var(--serif);
+    font-size:17px;
+    color:var(--text);
+    line-height:1.55;
+  }
+
+  .concept-section .label{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:2px;text-transform:uppercase;
+    color:var(--text-faint);margin-bottom:6px;display:block;
+  }
+  .concept-section p{color:var(--text);font-size:14.5px;line-height:1.7}
+  .concept-section .example-text{
+    font-family:var(--serif);font-style:italic;
+    color:var(--text-muted);font-size:15.5px;
+  }
+
+  .exam-box{
+    background:var(--bg-card-2);
+    border:1px dashed var(--gold-dim);
+    padding:16px 20px;
+    border-radius:2px;
+  }
+  .exam-box .label{
+    color:var(--gold);
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:10px;display:block;
+  }
+  .exam-box .q-prompt{
+    color:var(--gold-soft);
+    font-family:var(--serif);
+    font-size:16px;
+    font-style:italic;
+    margin-bottom:10px;
+    padding-left:14px;
+    border-left:2px solid var(--gold-dim);
+  }
+  .exam-box .a-label{
+    font-family:var(--mono);font-size:9px;letter-spacing:1.5px;
+    color:var(--text-faint);text-transform:uppercase;
+    margin-top:10px;margin-bottom:6px;display:block;
+  }
+  .exam-box .a-text{font-size:14px;line-height:1.7;color:var(--text)}
+
+  /* ---------- MISTAKES ---------- */
+  .mistake-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-left:3px solid #b88787;
+    padding:22px 26px;
+    margin-bottom:14px;
+    border-radius:2px;
+  }
+  .mistake-card .mistake-h{
+    font-family:var(--serif);
+    font-size:20px;font-weight:500;
+    color:#dab8b8;
+    margin-bottom:10px;
+    letter-spacing:.2px;
+  }
+  .mistake-card .why{
+    color:var(--text-muted);
+    font-size:14px;
+    margin-bottom:12px;
+    line-height:1.65;
+  }
+  .mistake-card .why::before{
+    content:"× ";color:#b88787;font-weight:600;
+  }
+  .mistake-card .correct{
+    color:var(--text);
+    font-size:14.5px;
+    line-height:1.7;
+    background:var(--bg-2);
+    padding:12px 16px;
+    border-left:2px solid var(--b2);
+    border-radius:2px;
+  }
+  .mistake-card .correct::before{
+    content:"✓ ";color:var(--b2);font-weight:600;
+  }
+
+  /* ---------- TABLES ---------- */
+  .table-wrap{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:3px;
+    padding:24px;
+    margin-bottom:22px;
+    overflow-x:auto;
+  }
+  .table-wrap h3{
+    font-family:var(--serif);
+    font-size:22px;font-weight:500;
+    color:var(--gold-soft);
+    margin-bottom:18px;
+    letter-spacing:.3px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  th,td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    border-bottom:1px solid var(--gold-dim);
+  }
+  td{color:var(--text)}
+  td:first-child{
+    font-family:var(--serif);
+    font-weight:500;
+    color:var(--gold-soft);
+    font-size:15px;
+  }
+  tr:last-child td{border-bottom:none}
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .checklist-col{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:3px;
+    padding:24px;
+  }
+  .checklist-col[data-b="1"]{border-top:3px solid var(--b1)}
+  .checklist-col[data-b="2"]{border-top:3px solid var(--b2)}
+  .checklist-col[data-b="3"]{border-top:3px solid var(--b3)}
+  .checklist-col[data-b="4"]{border-top:3px solid var(--b4)}
+  .checklist-col h3{
+    font-family:var(--serif);
+    font-size:22px;
+    font-weight:500;
+    margin-bottom:16px;
+    letter-spacing:.3px;
+  }
+  .checklist-col[data-b="1"] h3{color:var(--b1)}
+  .checklist-col[data-b="2"] h3{color:#c0d0b9}
+  .checklist-col[data-b="3"] h3{color:#dab8b8}
+  .checklist-col[data-b="4"] h3{color:#b8c4d4}
+
+  .check-item{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:9px 0;
+    border-bottom:1px dotted var(--border-soft);
+    cursor:pointer;
+  }
+  .check-item:last-child{border-bottom:none}
+  .check-item input{
+    margin-top:5px;
+    appearance:none;
+    width:14px;height:14px;
+    border:1px solid var(--gold-dim);
+    border-radius:2px;
+    background:var(--bg);
+    cursor:pointer;
+    flex-shrink:0;
+    position:relative;
+  }
+  .check-item input:checked{background:var(--gold);border-color:var(--gold)}
+  .check-item input:checked::after{
+    content:"✓";
+    position:absolute;
+    color:var(--bg);
+    font-size:11px;
+    top:-2px;left:2px;
+    font-weight:700;
+  }
+  .check-item label{
+    font-size:13.5px;
+    color:var(--text);
+    line-height:1.55;
+    cursor:pointer;
+  }
+  .check-item input:checked + label{
+    color:var(--text-faint);
+    text-decoration:line-through;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    max-width:1180px;
+    margin:80px auto 0;
+    padding:32px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:var(--text-faint);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:800px){
+    .bigpic-grid,.branch-summary-grid,.checklist-wrap{grid-template-columns:1fr}
+    main{padding:32px 20px}
+    .header-inner{padding:14px 20px}
+    section h2{font-size:32px}
+    .branch-num{font-size:48px}
+    .branch-header-text h2{font-size:26px}
+  }
+
+  /* prose links inside cards */
+  .prose-link{color:var(--gold);text-decoration:none;border-bottom:1px dotted var(--gold-dim)}
+  .citation{font-family:var(--mono);font-size:11px;color:var(--text-faint)}
+
+  /* small SVG inline diagrams */
+  .mini-svg{
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    padding:14px;
+    margin:14px 0;
+    border-radius:2px;
+  }
+  .mini-svg svg{display:block;width:100%;height:auto;max-height:280px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="title-block">
+        <h1>Cultural Self-Concept Differences</h1>
+        <div class="subtitle">Heine, Cultural Psychology — Chapter 6: Self &amp; Personality (pp. 223–235)</div>
+      </div>
+      <div class="meta">Course Notes · Exam Prep</div>
+    </div>
+    <div class="nav-row">
+      <div class="branch-filters">
+        <button class="filter-btn active" data-branch="all">All</button>
+        <button class="filter-btn" data-branch="b1">1 · Foundations</button>
+        <button class="filter-btn" data-branch="b2">2 · Self-Consistency</button>
+        <button class="filter-btn" data-branch="b3">3 · Cognitive Dissonance</button>
+        <button class="filter-btn" data-branch="b4">4 · Self-Awareness</button>
+      </div>
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search" placeholder="Search concepts, studies, terms…">
+      </div>
+    </div>
+    <div class="nav-jump">
+      <a href="#bigpic">Big Picture</a>
+      <a href="#mindmap">Mind Map</a>
+      <a href="#branch-1">Foundations</a>
+      <a href="#branch-2">Self-Consistency</a>
+      <a href="#branch-3">Cognitive Dissonance</a>
+      <a href="#branch-4">Self-Awareness</a>
+      <a href="#mistakes">Common Mistakes</a>
+      <a href="#tables">Reference Tables</a>
+      <a href="#checklist">Exam Checklist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     SECTION 0: BIG PICTURE
+============================================================ -->
+<section id="bigpic">
+  <h2><span class="section-num">0 · Orientation</span>The Big Picture</h2>
+  <p class="section-lede">Before any concept makes sense in isolation, you need to see why this chapter exists at all — what question is being asked, what is at stake, and how it sits inside the wider field.</p>
+
+  <div class="bigpic-grid">
+    <div class="bigpic-card full">
+      <h3>The Central Question</h3>
+      <p>If the <strong>self-concept</strong> is the lens through which a person perceives, evaluates, and behaves, and if cultures shape that self-concept differently — primarily as <strong>independent</strong> (in much of the West) or <strong>interdependent</strong> (in much of East Asia and beyond) — then a single question runs through this whole chapter:</p>
+      <p style="margin-top:14px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-soft);padding-left:18px;border-left:2px solid var(--gold)">Do the psychological mechanisms long treated as universal in Western psychology — consistency, dissonance, self-awareness, accurate self-knowledge — actually look the same in cultures with a different self-concept, or do they look fundamentally different?</p>
+    </div>
+
+    <div class="bigpic-card">
+      <h3>Why It Matters Scientifically</h3>
+      <p>Mainstream personality and social psychology was built on samples with predominantly independent selves. If the same theory and same instrument produce different — even contradictory — results in a different cultural sample, then the field's claims to universality were premature. The chapter shows three signature universalist findings (cognitive dissonance, mirror-induced self-criticism, accurate self-prediction) failing to replicate cleanly outside Western samples, forcing a methodological reckoning.</p>
+    </div>
+
+    <div class="bigpic-card">
+      <h3>Why It Matters Practically</h3>
+      <p>Once the self-concept varies, everything downstream varies with it. Marketing appeals (Cialdini), clinical interventions, executive coaching, leadership models, cross-cultural negotiation, and our own assumptions about "authenticity" and "hypocrisy" all rest on culturally-bound notions of what a coherent self is supposed to look like. A coach or clinician using a Western self-consistency model on an East Asian client can misread an "if-then" self as fragmentation rather than as a coherent relational architecture.</p>
+    </div>
+
+    <div class="bigpic-card full">
+      <h3>How It Connects To The Broader Field</h3>
+      <p>This chapter sits on top of the <strong>Markus &amp; Kitayama (1991)</strong> theoretical pillar (independent vs. interdependent self-construal), extends it into <strong>Festinger's classical cognitive dissonance theory</strong> (testing whether dissonance is universal), reaches into <strong>cognitive psychology</strong> (memory perspective and self-prediction accuracy), and ends with the <strong>Duval &amp; Wicklund self-awareness</strong> tradition (mirror studies). The pattern across all four lines of work is the same: the Western finding holds among Westerners, and either disappears, reverses, or restructures itself among East Asians. The whole chapter is therefore a sustained argument for cultural psychology as a corrective to a too-thin universalism.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 0A: MIND MAP
+============================================================ -->
+<section id="mindmap">
+  <h2><span class="section-num">0A · Conceptual Architecture</span>Mind Map — How Everything Connects</h2>
+  <p class="section-lede">A single central question fans out into four thematic branches. Every concept, study, and table that follows belongs to one of these branches.</p>
+
+  <div class="mindmap-wrap">
+    <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of Chapter 6 organised into four branches around a central question">
+      <defs>
+        <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c9a96e" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- connecting lines -->
+      <line x1="550" y1="310" x2="220" y2="130" stroke="#c9a96e" stroke-width="1" opacity=".5"/>
+      <line x1="550" y1="310" x2="880" y2="130" stroke="#8fa388" stroke-width="1" opacity=".5"/>
+      <line x1="550" y1="310" x2="220" y2="490" stroke="#b88787" stroke-width="1" opacity=".5"/>
+      <line x1="550" y1="310" x2="880" y2="490" stroke="#8898ad" stroke-width="1" opacity=".5"/>
+
+      <!-- center -->
+      <circle cx="550" cy="310" r="130" fill="url(#centerGrad)"/>
+      <circle cx="550" cy="310" r="92" fill="#1a1816" stroke="#c9a96e" stroke-width="1.5"/>
+      <text x="550" y="298" text-anchor="middle" fill="#e0c896" font-family="Cormorant Garamond, serif" font-size="18" font-style="italic">Does the self</text>
+      <text x="550" y="318" text-anchor="middle" fill="#e0c896" font-family="Cormorant Garamond, serif" font-size="18" font-style="italic">work the same</text>
+      <text x="550" y="338" text-anchor="middle" fill="#e0c896" font-family="Cormorant Garamond, serif" font-size="18" font-style="italic">across cultures?</text>
+
+      <!-- branch 1: Foundations -->
+      <g>
+        <rect x="50" y="60" width="340" height="140" rx="3" fill="#1a1816" stroke="#c9a96e" stroke-width="1.5"/>
+        <rect x="50" y="60" width="340" height="4" fill="#c9a96e"/>
+        <text x="68" y="92" fill="#c9a96e" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2">BRANCH 1</text>
+        <text x="68" y="118" fill="#e0c896" font-family="Cormorant Garamond, serif" font-size="22" font-weight="500">Theoretical Foundations</text>
+        <text x="68" y="146" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Independent vs. interdependent self</text>
+        <text x="68" y="164" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Markus &amp; Kitayama (1991)</text>
+        <text x="68" y="182" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Origins of cultural psychology</text>
+      </g>
+
+      <!-- branch 2: Self-Consistency -->
+      <g>
+        <rect x="710" y="60" width="340" height="140" rx="3" fill="#1a1816" stroke="#8fa388" stroke-width="1.5"/>
+        <rect x="710" y="60" width="340" height="4" fill="#8fa388"/>
+        <text x="728" y="92" fill="#8fa388" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2">BRANCH 2</text>
+        <text x="728" y="118" fill="#c0d0b9" font-family="Cormorant Garamond, serif" font-size="22" font-weight="500">Self-Consistency</text>
+        <text x="728" y="146" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Twenty Statements Test (Kanagawa)</text>
+        <text x="728" y="164" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· If-then profile, authenticity</text>
+        <text x="728" y="182" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Suh (2002), English &amp; Chen, Effron</text>
+      </g>
+
+      <!-- branch 3: Cognitive Dissonance -->
+      <g>
+        <rect x="50" y="420" width="340" height="140" rx="3" fill="#1a1816" stroke="#b88787" stroke-width="1.5"/>
+        <rect x="50" y="420" width="340" height="4" fill="#b88787"/>
+        <text x="68" y="452" fill="#b88787" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2">BRANCH 3</text>
+        <text x="68" y="478" fill="#dab8b8" font-family="Cormorant Garamond, serif" font-size="22" font-weight="500">Cognitive Dissonance</text>
+        <text x="68" y="506" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Festinger (1957), Heine &amp; Lehman</text>
+        <text x="68" y="524" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Hoshino-Browne — for others</text>
+        <text x="68" y="542" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Cialdini — Poland vs. US</text>
+      </g>
+
+      <!-- branch 4: Self-Awareness -->
+      <g>
+        <rect x="710" y="420" width="340" height="140" rx="3" fill="#1a1816" stroke="#8898ad" stroke-width="1.5"/>
+        <rect x="710" y="420" width="340" height="4" fill="#8898ad"/>
+        <text x="728" y="452" fill="#8898ad" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2">BRANCH 4</text>
+        <text x="728" y="478" fill="#b8c4d4" font-family="Cormorant Garamond, serif" font-size="22" font-weight="500">Self-Awareness</text>
+        <text x="728" y="506" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Subjective vs. objective (inside/outside)</text>
+        <text x="728" y="524" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· 1st- vs. 3rd-person memory</text>
+        <text x="728" y="542" fill="#9a948a" font-family="DM Sans, sans-serif" font-size="12">· Mirror studies (Heine, 2008)</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="branch-summary-grid">
+    <div class="branch-summary-card" data-b="1">
+      <div class="branch-tag">Branch 1 · Foundations</div>
+      <h4>The theoretical anchor</h4>
+      <p>Everything else hangs on Markus &amp; Kitayama's 1991 distinction between an independent self (bounded, attribute-based, cross-situational) and an interdependent self (relational, context-sensitive). Without this distinction, the puzzles in branches 2–4 cannot even be posed.</p>
+    </div>
+    <div class="branch-summary-card" data-b="2">
+      <div class="branch-tag">Branch 2 · Self-Consistency</div>
+      <h4>Acting the same across situations</h4>
+      <p>If the self is interdependent, do you behave the same way at work, at home, with strangers? The data say no — and yet East Asians remain consistent <em>within</em> each relationship over time. The Western "true self" question turns out to be culturally loaded.</p>
+    </div>
+    <div class="branch-summary-card" data-b="3">
+      <div class="branch-tag">Branch 3 · Cognitive Dissonance</div>
+      <h4>How cultures resolve inconsistency</h4>
+      <p>Festinger's classic dissonance reduction shows up cleanly in North American samples and disappears among Japanese — unless the choice is being made for someone else. The motivation to be consistent is preserved, but its target shifts from self to other.</p>
+    </div>
+    <div class="branch-summary-card" data-b="4">
+      <div class="branch-tag">Branch 4 · Self-Awareness</div>
+      <h4>Whose perspective do you take on yourself?</h4>
+      <p>Westerners default to an inside-out view of themselves; East Asians more often start from the outside-in. This reshapes memory imagery, the accuracy of self-prediction, and what a mirror does to your self-evaluation. The mirror that humbles a Westerner barely registers for a Japanese participant.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 1: HIGH-YIELD CONCEPTS — BRANCH 1
+============================================================ -->
+<section id="branch-1">
+  <div class="branch-header" data-b="1">
+    <div class="branch-num">1</div>
+    <div class="branch-header-text">
+      <div class="branch-label">Branch · Foundations</div>
+      <h2>Theoretical Foundations of the Cultural Self</h2>
+    </div>
+  </div>
+  <div class="branch-intro" data-b="1">Cultural psychology is over a century old, yet it lacked a useable theoretical scaffold until 1991. The distinction below is the hinge on which the rest of the chapter swings — every later study is essentially a test of what this distinction predicts.</div>
+
+  <!-- Concept 01 -->
+  <details class="concept-card" data-b="1" data-text="independent self-concept bounded autonomous internal attributes western markus kitayama">
+    <summary>
+      <span class="concept-num">01</span>
+      <span class="concept-title">Independent Self-Concept</span>
+      <span class="concept-tag">Foundation</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A self-concept organised around bounded, internal attributes — traits, abilities, attitudes, preferences — that are seen as belonging to the person and remaining stable across situations and relationships.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>The independent self treats the person as the unit of analysis. The "real you" is what is inside you and the social world is the stage on which that interior is expressed. Behaviour that matches your stated traits across contexts is therefore evidence of a coherent, authentic self.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">An American student who describes herself as "outgoing" expects to behave outgoingly with professors, friends, and family — and would feel "fake" if she didn't.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Define the independent self-concept and explain why it makes self-consistency a moral norm in Western cultures."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">The independent self-concept locates identity in bounded internal attributes — traits, attitudes, abilities — that are presumed to be stable across contexts. Because the self is theorised as detachable from social context, behaving consistently across situations is read as evidence that one's behaviour reflects one's "true" interior. Inconsistency is read as either inauthenticity or hypocrisy. Self-consistency is therefore not just descriptively common in the West but normatively prescribed.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">If a self organised around stable internal attributes is one possibility, the other is a self organised around relationships — and the contrast is what the rest of the chapter tests.</p>
+
+  <!-- Concept 02 -->
+  <details class="concept-card" data-b="1" data-text="interdependent self-concept relational context east asian roles relationships">
+    <summary>
+      <span class="concept-num">02</span>
+      <span class="concept-title">Interdependent Self-Concept</span>
+      <span class="concept-tag">Foundation</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A self-concept organised around relationships, roles, and obligations — where the relevant unit of identity is the person-in-context rather than the bounded individual.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>For the interdependent self, "who I am" is a function of "who I am with." The same person legitimately presents differently as a daughter, as an employee, as a friend at a bar — and this is not regarded as fragmentation or duplicity but as appropriate role-fit. Identity is distributed across the network of relationships, not stored inside the individual.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A Japanese participant who is quiet and respectful in a professor's office and outspoken with friends is not "two-faced" — she is correctly tracking the demands of two different relational contexts.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why does the interdependent self-concept predict context-specific self-descriptions?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Because identity is theorised as residing in relationships rather than in bounded internal attributes, the "self" that is relevant in any moment depends on who else is present. The presence of a professor activates a different role-self than the presence of peers, and self-descriptions track those different selves. Kanagawa, Cross &amp; Markus (2001) showed exactly this — Japanese students' self-descriptions on the Twenty Statements Test varied substantially across four contexts, while American descriptions remained nearly constant.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The independent/interdependent distinction did not arrive in cultural psychology until late — which is why a 19th-century field had so little theoretical traction for decades.</p>
+
+  <!-- Concept 03 -->
+  <details class="concept-card" data-b="1" data-text="markus kitayama 1991 theoretical foundation cultural psychology turning point">
+    <summary>
+      <span class="concept-num">03</span>
+      <span class="concept-title">Markus &amp; Kitayama (1991) — The Theoretical Hinge</span>
+      <span class="concept-tag">Foundation</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The 1991 paper that proposed the independent vs. interdependent self-construal distinction and gave cultural psychology its first generative theoretical frame.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Although cultural psychology dates back to the 19th century, Heine notes that the field had little theoretical foundation to build on until this paper. The independent/interdependent distinction provided a single, falsifiable contrast that could be used to generate predictions about cognition, emotion, motivation, and self — which is exactly what the rest of Chapter 6 is doing.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">Every study in this chapter — Kanagawa et al. on context, Heine &amp; Lehman on dissonance, Heine et al. on mirrors — derives its hypothesis from this 1991 frame.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why is Markus &amp; Kitayama (1991) treated as a turning point in cultural psychology?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Cultural psychology had existed since the 19th century but lacked a unifying theoretical contrast strong enough to organise empirical work. Markus &amp; Kitayama's distinction between independent and interdependent self-construals provided that contrast. Once the two construals were specified, researchers could predict where cultures would converge and diverge across self-related processes — consistency, dissonance, self-awareness — and test those predictions empirically. The 1991 paper transformed cultural psychology from a descriptive enterprise into a hypothesis-generating one.</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================
+     BRANCH 2: SELF-CONSISTENCY
+============================================================ -->
+<section id="branch-2">
+  <div class="branch-header" data-b="2">
+    <div class="branch-num">2</div>
+    <div class="branch-header-text">
+      <div class="branch-label">Branch · Self-Consistency</div>
+      <h2>Acting the Same Across Situations</h2>
+    </div>
+  </div>
+  <div class="branch-intro" data-b="2">If the independent self is supposed to be stable across contexts and the interdependent self is supposed to vary with context, the simplest test is descriptive: ask people to describe themselves in different settings and see how much the description changes. That single methodological move — used in the Kanagawa study — turns out to break a long-standing assumption in personality research.</div>
+
+  <!-- Concept 04 -->
+  <details class="concept-card" data-b="2" data-text="self consistency definition motivation across situations">
+    <summary>
+      <span class="concept-num">04</span>
+      <span class="concept-title">Self-Consistency</span>
+      <span class="concept-tag">Self-Consistency</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The degree to which a person behaves and describes themselves the same way across different situations and relational contexts.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>High self-consistency means a person acts more or less the same with friends, with colleagues, and with family. Low self-consistency means the person's behaviour differs sharply across contexts — quiet with professors, opinionated with friends, doting with grandparents. Heine emphasises that cultures vary considerably in how strongly people are <em>motivated</em> to be consistent, not just in how consistent they happen to be.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A high-consistency person is the colleague who is described as "the same person whether you meet her at the office, at her kid's birthday party, or at the gym."</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Distinguish high and low self-consistency and explain why this distinction matters cross-culturally."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">High self-consistency refers to behaving and describing oneself similarly across situations; low self-consistency refers to context-dependent variation in behaviour and self-description. Cross-culturally, this matters because the trait is differentially valued: independent cultures treat consistency as a marker of an authentic self, while interdependent cultures treat context-sensitivity as a marker of social competence. The same low-consistency profile may therefore signal "inauthenticity" in one culture and "appropriate role behaviour" in another.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">To make this measurable, Kanagawa, Cross &amp; Markus designed an elegant manipulation of one variable that questionnaire research had almost completely ignored — the context in which the questionnaire is filled out.</p>
+
+  <!-- Concept 05 -->
+  <details class="concept-card" data-b="2" data-text="kanagawa cross markus 2001 twenty statements test japanese american context manipulation">
+    <summary>
+      <span class="concept-num">05</span>
+      <span class="concept-title">Kanagawa, Cross &amp; Markus (2001) — Context Manipulation Study</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A landmark study in which Japanese and American students completed the Twenty Statements Test under four different social contexts (in a professor's office, with a fellow student, in a large group of 20–50 people, alone in a room) to test whether self-descriptions are context-stable.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>The researchers coded each self-statement as positive or negative and computed a positivity ratio. Two patterns emerged in <strong>Table 6.2</strong>: (a) Americans were far more positive overall than Japanese — a finding the textbook returns to in Chapter 8 — and (b) American responses were nearly identical across the four contexts (3.77, 3.26, 3.30, 3.22), while Japanese responses varied substantially (0.35, 0.69, 0.50, 1.19), with notably more self-criticism in the professor's office and notably more self-positivity when alone.</p>
+      </div>
+      <div class="mini-svg">
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="180" x2="580" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <line x1="60" y1="40" x2="60" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <text x="40" y="46" fill="#9a948a" font-size="10" font-family="JetBrains Mono">4</text>
+          <text x="40" y="110" fill="#9a948a" font-size="10" font-family="JetBrains Mono">2</text>
+          <text x="40" y="184" fill="#9a948a" font-size="10" font-family="JetBrains Mono">0</text>
+          <!-- American bars (yellow) -->
+          <rect x="90" y="49" width="40" height="131" fill="#c9a96e"/>
+          <rect x="220" y="71" width="40" height="109" fill="#c9a96e"/>
+          <rect x="350" y="69" width="40" height="111" fill="#c9a96e"/>
+          <rect x="480" y="72" width="40" height="108" fill="#c9a96e"/>
+          <!-- Japanese bars (sage) -->
+          <rect x="135" y="168" width="40" height="12" fill="#8fa388"/>
+          <rect x="265" y="156" width="40" height="24" fill="#8fa388"/>
+          <rect x="395" y="163" width="40" height="17" fill="#8fa388"/>
+          <rect x="525" y="139" width="40" height="41" fill="#8fa388"/>
+          <!-- labels -->
+          <text x="135" y="200" fill="#9a948a" font-size="10" font-family="DM Sans" text-anchor="middle">Professor</text>
+          <text x="265" y="200" fill="#9a948a" font-size="10" font-family="DM Sans" text-anchor="middle">Fellow Student</text>
+          <text x="395" y="200" fill="#9a948a" font-size="10" font-family="DM Sans" text-anchor="middle">Large Group</text>
+          <text x="525" y="200" fill="#9a948a" font-size="10" font-family="DM Sans" text-anchor="middle">Alone</text>
+          <!-- legend -->
+          <rect x="380" y="10" width="10" height="10" fill="#c9a96e"/>
+          <text x="396" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">American (stable)</text>
+          <rect x="500" y="10" width="10" height="10" fill="#8fa388"/>
+          <text x="516" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">Japanese (varies)</text>
+          <text x="60" y="22" fill="#c9a96e" font-size="11" font-family="JetBrains Mono" letter-spacing="2">POSITIVITY RATIO BY CONTEXT</text>
+        </svg>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Describe Kanagawa et al. (2001) and explain why the result challenged a methodological assumption in personality research."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Kanagawa, Cross &amp; Markus (2001) had Japanese and American university students complete the Twenty Statements Test in four contexts. American responses were highly stable across contexts; Japanese responses varied substantially in positivity. The result challenged the assumption — until then largely unexamined — that personality and self-concept measures yield context-independent results. If the same instrument produces different responses in the same person depending on who else is in the room, then the assumption that self-concept exists separately from context cannot be sustained for the interdependent self.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The Kanagawa result generates an awkward methodological problem: if the self varies with context, which context gives the "real" answer?</p>
+
+  <!-- Concept 06 -->
+  <details class="concept-card" data-b="2" data-text="true self problem methodological challenge context-specificity">
+    <summary>
+      <span class="concept-num">06</span>
+      <span class="concept-title">The "True Self" Problem</span>
+      <span class="concept-tag">Methodology</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The methodological puzzle that arises once self-descriptions vary by context: which context (alone? with peers? with authority?) yields the "true" or most accurate self-concept?</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Heine raises this directly: should we describe a Japanese individual's self-concept as the average of contexts, the most extreme one, the solitary one, or the relational one? There is no obviously correct answer. The very category "true self" is built on the independent assumption that there is one stable internal answer to find. If the self is interdependent, the question is malformed — or at least requires a different formulation.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">Cousins (1989), Gage, Coker &amp; Jobson (2015), and Locke et al. (2017) all replicate the context-specificity finding for the East Asian self.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Explain why the Kanagawa et al. result creates a problem for traditional personality measurement."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Traditional personality measurement assumes that a person has one self-concept that any well-designed instrument can recover. If a Japanese sample yields different self-descriptions in a professor's office than when alone, the instrument has no privileged context that can be designated the "real" measurement. Researchers must therefore decide whether to average, contextualise, or restructure their measurement strategy — and this decision rests on theoretical commitments about whether the self is fundamentally bounded or fundamentally relational.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">Despite the variation across contexts, East Asians are not psychologically chaotic. The next concepts show how cross-context variability and within-relationship stability can co-exist.</p>
+
+  <!-- Concept 07 -->
+  <details class="concept-card" data-b="2" data-text="if-then profile english chen 2007 2011 within-relationship stability">
+    <summary>
+      <span class="concept-num">07</span>
+      <span class="concept-title">The "If-Then" Profile of the East Asian Self</span>
+      <span class="concept-tag">Self-Consistency</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A self-concept architecture in which "if" specifies the relational context and "then" specifies the habitual way of behaving and thinking about oneself in that context — yielding stability within each relationship across time, even as the self varies across relationships.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>English &amp; Chen (2007, 2011) showed that East Asian self-concepts vary across relationships but remain highly stable <em>within</em> each relationship over the lifespan. A person's "son self" looks the same year after year; their "drinking buddy self" also looks the same year after year. The self is not fragmentary — it is a structured set of relational profiles, each of which is internally coherent.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">If Ben is with his parents, then he is diligent and eager to fulfil his obligations. If Ben is with his hiking friends, then he is loose and irreverent. Both profiles are stable across time.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why does the 'if-then' profile show that East Asians are not less stable than Westerners — only differently stable?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">The "if-then" profile (English &amp; Chen, 2007, 2011) demonstrates that East Asian self-concepts remain highly stable within each relationship across time. What varies across contexts is which relational profile is activated; what is stable across time is the content of each profile. East Asians therefore show full temporal stability — a hallmark of personality — but distribute it across relational profiles rather than collapsing it into a single cross-situational signature. The Western "consistency" finding and the East Asian "context variation" finding are both manifestations of stability, just stability indexed at different units of analysis.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 08 -->
+  <details class="concept-card" data-b="2" data-text="suh 2002 self consistency well being korea us authenticity correlation">
+    <summary>
+      <span class="concept-num">08</span>
+      <span class="concept-title">Suh (2002) — Consistency &amp; Well-Being</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A cross-cultural study (Korea vs. United States) that calculated each participant's self-consistency value across situations and correlated it with subjective well-being, social skills (informant-rated), and likability (informant-rated).</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>For Americans, consistency was strongly positively correlated with well-being (.44), social skills (.37), and likability (.33). For Koreans, the corresponding correlations were much weaker (.19, .12, –.02). Consistency, in other words, was functionally tied to good outcomes for Americans and largely uncoupled from those outcomes for Koreans (<strong>Table 6.3</strong>).</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A Korean participant who behaved very differently across situations was no less likely to be liked or to feel well than one who behaved very similarly across situations.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"How does Suh (2002) show that the value placed on self-consistency is culturally specific?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Suh (2002) compared correlations between self-consistency and three outcomes — well-being, social skills, and likability — in Korean and American samples. American correlations were substantially stronger than Korean correlations across all three outcomes. The result implies that consistency is psychologically and socially "rewarded" in the US — consistent people feel better and are seen more favourably — whereas in Korea consistency is largely decoupled from these outcomes. The functional benefits that justify Western consistency norms therefore do not generalise.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 09 -->
+  <details class="concept-card" data-b="2" data-text="english chen authenticity european american east asian">
+    <summary>
+      <span class="concept-num">09</span>
+      <span class="concept-title">English &amp; Chen (2011) — Consistency &amp; Authenticity</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">Research showing that being consistent across situations was associated with higher feelings of authenticity for European Americans but not for East Asians.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Authenticity — the felt sense of "being yourself" — turns out to be tied to cross-situational consistency only in the Western sample. For East Asians, authenticity is not produced by behaving the same way across contexts. This converges with Suh's finding that consistency-correlates of well-being are culturally specific.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">An East Asian who behaves very differently with parents than with friends does not feel less "themselves" because of this — quite possibly the opposite, since correctly tracking each relational context is itself the relevant authenticity.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why does the English &amp; Chen (2011) finding suggest that 'authenticity' is a culturally loaded construct?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">English &amp; Chen (2011) showed that consistency across situations correlates with felt authenticity for European Americans but not for East Asians. Authenticity is therefore not a culture-free experiential signal; it is calibrated to the local model of what a coherent self should look like. In an independent culture, authenticity tracks cross-situational sameness; in an interdependent culture, authenticity may track appropriate role-fit instead. Treating "be yourself" advice as universal therefore smuggles in an independent self-concept that may not apply.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 10 -->
+  <details class="concept-card" data-b="2" data-text="effron markus jackman muramoto muluk hypocrisy westerners harsher judgments">
+    <summary>
+      <span class="concept-num">10</span>
+      <span class="concept-title">Effron et al. — Cultural Variation in Hypocrisy Judgments</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">Research showing that when people act inconsistently with their stated beliefs, Westerners judge them more harshly as hypocritical than do people from Indonesia, India, and Japan.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>If Western consistency norms are tied to a moral concept of authenticity, then violating them carries a moral cost: hypocrisy. The Effron et al. result shows this cost is culturally calibrated. In cultures where context-sensitive variation is normative, the same behaviour does not trigger the same negative moral judgment.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A politician who privately disagrees with what they publicly support will be judged more harshly in the United States than in Indonesia for the same disjunction.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"How do Effron et al.'s findings connect Western consistency norms to moral judgment?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Effron and colleagues found that inconsistency between belief and behaviour drew harsher hypocrisy judgments from Westerners than from participants in Indonesia, India, and Japan. This converts the descriptive Western preference for consistency into a moral norm: deviating from it is read as a character flaw. In cultures with weaker consistency norms, the same disjunction does not carry the same moral charge, supporting the view that Western consistency expectations are culturally specific rather than universal moral facts.</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================
+     BRANCH 3: COGNITIVE DISSONANCE
+============================================================ -->
+<section id="branch-3">
+  <div class="branch-header" data-b="3">
+    <div class="branch-num">3</div>
+    <div class="branch-header-text">
+      <div class="branch-label">Branch · Cognitive Dissonance</div>
+      <h2>How Cultures Resolve Inconsistency</h2>
+    </div>
+  </div>
+  <div class="branch-intro" data-b="3">If Western culture treats consistency as a moral and well-being-relevant norm, then violations of consistency should produce distress — exactly what Festinger's classical theory predicts. The branch above showed cultural variation in the consistency norm itself; this branch asks whether the distress signal predicted by Festinger's theory is itself culturally variable.</div>
+
+  <!-- Concept 11 -->
+  <details class="concept-card" data-b="3" data-text="cognitive dissonance festinger 1957 inconsistency distress motivation">
+    <summary>
+      <span class="concept-num">11</span>
+      <span class="concept-title">Cognitive Dissonance (Festinger, 1957)</span>
+      <span class="concept-tag">Cognitive Dissonance</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The distressing psychological state that arises when we observe ourselves behaving inconsistently or acting against our own sense of self-consistency. Festinger proposed it is so disturbing that it motivates us to reduce it.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Festinger placed self-consistency at the centre of social-psychological motivation. The premise of dissonance theory is that humans cannot tolerate observing themselves behaving inconsistently — the inconsistency creates distress, and the distress drives behaviour aimed at reducing it. For decades, dissonance was treated as one of social psychology's most universal findings.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">Choosing one of two equally desirable cars produces dissonance because the rejected car has features the chosen one lacks. People resolve this by upgrading the chosen car's positives in their minds.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"State Festinger's (1957) theory of cognitive dissonance and identify the assumption that makes it culturally specific."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Festinger (1957) proposed that observing oneself behaving inconsistently produces a distressing state — cognitive dissonance — which is so aversive that it motivates effort to reduce it. The culturally specific assumption embedded in the theory is that the relevant target of consistency is the bounded individual self. Cross-cultural research (Heine &amp; Lehman, 1997b; Hoshino-Browne et al., 2005) suggests that the motivation to be consistent is preserved across cultures but its target shifts from self to others or to others' expectations in interdependent samples — reframing dissonance as a universal motivation with culturally variable triggers.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The cleanest demonstration of dissonance is the choice rationalization paradigm — and it is also the paradigm used to test whether the effect generalises across cultures.</p>
+
+  <!-- Concept 12 -->
+  <details class="concept-card" data-b="3" data-text="dissonance reduction rationalization attitude change">
+    <summary>
+      <span class="concept-num">12</span>
+      <span class="concept-title">Dissonance Reduction</span>
+      <span class="concept-tag">Cognitive Dissonance</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The act of changing one's attitudes — rather than one's behaviour — so that one no longer appears to be inconsistent. The classical strategy for resolving cognitive dissonance.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Behaviour is hard to change after the fact, so people often change attitudes instead. After choosing between two similar alternatives, the chosen alternative's positives get upgraded and the rejected alternative's positives get downgraded — bringing attitudes into line with the choice. The premium society places on consistent behaviour is evident in the effort people make to manufacture self-consistency where it didn't exist.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">After buying a car, people start noticing the chosen car's strengths and the rejected car's weaknesses more than they did before purchase. This rationalization tends to happen <em>after</em> the choice, when the inconsistency emerges.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Define dissonance reduction and explain why it typically follows rather than precedes a decision."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Dissonance reduction is the strategy of changing attitudes so that one's behaviour and beliefs no longer appear inconsistent. It typically follows decisions because before a decision both alternatives still feel viable; once a choice is made, the rejected alternative's positive features become an active threat to perceived consistency. The post-decisional moment is therefore when dissonance peaks and rationalization is required. Heine &amp; Lehman (1997b) used this exact post-decisional logic to test whether Japanese participants would rationalize as Canadian participants did.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 13 -->
+  <details class="concept-card" data-b="3" data-text="heine lehman 1997 cd music canadian japanese rationalize decision">
+    <summary>
+      <span class="concept-num">13</span>
+      <span class="concept-title">Heine &amp; Lehman (1997b) — The CD Choice Study</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A direct cross-cultural test of post-decisional dissonance reduction. Japanese and Canadian participants rated 10 music CDs, were given a choice between their 5th- and 6th-ranked CDs, and re-rated all 10 after choosing.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>If a participant rationalized, they should have liked the chosen CD more and the rejected CD less after deciding than before. Canadians showed this exact pattern, replicating Brehm (1956) and Steele, Spencer &amp; Lynch (1993). Japanese participants showed no such tendency — no rationalization, no apparent dissonance to reduce. Kashima, Siegal, Tanaka &amp; Kashima (1992) had reported similar non-replication.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">After choosing the 5th-ranked CD, a Canadian participant typically rated it as even more desirable than initially and the 6th-ranked CD as even less desirable. A Japanese participant's ratings looked roughly the same as before the choice.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"What did Heine &amp; Lehman (1997b) find, and what does it imply about the universality of cognitive dissonance?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Heine &amp; Lehman (1997b) found that Canadian participants rationalized their choice between two equally desirable CDs — preferring the chosen CD more and the rejected one less afterward — whereas Japanese participants showed no such rationalization. The result implies that classical post-decisional dissonance, as Festinger formulated it, does not generalise straightforwardly to cultures with an interdependent self-concept. Inconsistency between one's decisions and one's attitudes is not as urgent to resolve when the self is not the primary unit of consistency.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The natural follow-up question is whether Japanese participants experience no consistency motivation at all. The answer is more interesting than that: their consistency motivation is preserved but its target shifts.</p>
+
+  <!-- Concept 14 -->
+  <details class="concept-card" data-b="3" data-text="hoshino browne 2005 east asians rationalize for others food restaurant">
+    <summary>
+      <span class="concept-num">14</span>
+      <span class="concept-title">Hoshino-Browne et al. (2005) — Rationalizing for Others</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study showing that East Asians do rationalize their decisions — but specifically when those decisions are made on behalf of others.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Japanese participants who ordered food from a restaurant for others to eat showed more rationalization than when they ordered food for themselves. The opposite pattern emerged for European Canadians. The finding is structurally important: it preserves the universality of consistency motivation while showing that its target — the unit one is being consistent with — is culturally variable.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A Japanese host ordering for guests rationalizes the choice afterward; the same Japanese person ordering for themselves shows little rationalization.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"How does Hoshino-Browne et al. (2005) refine, rather than overturn, dissonance theory?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Hoshino-Browne et al. (2005) showed that Japanese participants did rationalize decisions, but only when those decisions concerned others. This refines Festinger's theory rather than overturning it. The motivation to be consistent is preserved across cultures, but the target of consistency shifts: independent selves are motivated to be consistent with their own attitudes; interdependent selves are motivated to be consistent with others' expectations and others' interests. Dissonance is therefore a universal motivation whose triggers and targets are culturally specified.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 15 -->
+  <details class="concept-card" data-b="3" data-text="kitayama snibbe markus 2004 others decisions rationalize">
+    <summary>
+      <span class="concept-num">15</span>
+      <span class="concept-title">Kitayama, Snibbe &amp; Markus (2004) — Decisions Through Others' Eyes</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study showing that Japanese participants rationalized their decisions when they were primed to consider the decisions they thought others would make.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>The finding converges with Hoshino-Browne et al.: East Asian dissonance reduction is triggered by others' actual or implied involvement. Heine summarises the cross-cultural picture as "East Asians are not less consistent than North Americans but are consistent in different ways" — North Americans aspire to self-consistency, East Asians to consistency with others.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">When asked to consider what their classmates would have chosen between two CDs, Japanese participants rationalized — bringing their own attitudes into line with their imagined-other choice.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"What single principle unifies Hoshino-Browne et al. (2005) and Kitayama, Snibbe &amp; Markus (2004)?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Both studies show that East Asian consistency motivation is socially indexed: it activates when decisions involve, are made for, or are evaluated through other people. The unifying principle is that the cross-cultural difference is not in whether consistency matters but in what one is being consistent with. Independent selves track consistency with internal attitudes; interdependent selves track consistency with others. The motivation is universal, the referent is cultural.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 16 -->
+  <details class="concept-card" data-b="3" data-text="cialdini 1999 poland us coca cola self peer consistency">
+    <summary>
+      <span class="concept-num">16</span>
+      <span class="concept-title">Cialdini et al. (1999) — Poland vs. United States</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study testing how the source of consistency information affects compliance with a marketing request, comparing the more collectivistic Poland with the more individualistic US.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Participants imagined responding to a Coca-Cola survey representative. In a "self-consistency" condition they were told they had always complied with similar past requests; in a "peer-consistency" condition they were told their classmates always complied. Americans were more influenced by their <em>own</em> past compliance; Poles were more influenced by their <em>peers'</em> compliance (Figure 6.11). Marketers and fundraisers must therefore tailor their consistency appeals to the local self-concept.</p>
+      </div>
+      <div class="mini-svg">
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="180" x2="580" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <line x1="80" y1="40" x2="80" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <text x="50" y="46" fill="#9a948a" font-size="10" font-family="JetBrains Mono">6</text>
+          <text x="50" y="110" fill="#9a948a" font-size="10" font-family="JetBrains Mono">5</text>
+          <text x="50" y="184" fill="#9a948a" font-size="10" font-family="JetBrains Mono">4</text>
+          <!-- Peer Complied: Poland tall, US short -->
+          <rect x="160" y="50" width="50" height="130" fill="#b88787"/>
+          <rect x="220" y="115" width="50" height="65" fill="#c9a96e"/>
+          <!-- Individual Complied: Poland short, US tall -->
+          <rect x="380" y="100" width="50" height="80" fill="#b88787"/>
+          <rect x="440" y="55" width="50" height="125" fill="#c9a96e"/>
+          <!-- labels -->
+          <text x="215" y="200" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">Peers complied</text>
+          <text x="435" y="200" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">Self complied previously</text>
+          <!-- legend -->
+          <rect x="380" y="10" width="10" height="10" fill="#b88787"/>
+          <text x="396" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">Poland</text>
+          <rect x="450" y="10" width="10" height="10" fill="#c9a96e"/>
+          <text x="466" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">United States</text>
+          <text x="80" y="22" fill="#c9a96e" font-size="11" font-family="JetBrains Mono" letter-spacing="2">LIKELIHOOD OF COMPLYING</text>
+        </svg>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"How does Cialdini et al. (1999) demonstrate culturally tailored consistency motivation?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Cialdini et al. (1999) compared compliance with a marketing request after participants were given either self-consistency or peer-consistency information. Americans were more influenced by being told they had personally complied before; Poles were more influenced by being told their classmates had complied. Both groups responded to a consistency appeal — but the appeal that worked was the one matching the local model of the self. Independent samples track consistency with their own past behaviour; collectivistic samples track consistency with peers' behaviour. The same persuasive lever therefore has to be repointed across cultures.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">If consistency really does serve different psychological functions across cultures, the question becomes: why be consistent at all? This is where Suh's correlational data (already met in Branch 2) shuts down the universalist functional argument.</p>
+</section>
+
+<!-- ============================================================
+     BRANCH 4: SELF-AWARENESS
+============================================================ -->
+<section id="branch-4">
+  <div class="branch-header" data-b="4">
+    <div class="branch-num">4</div>
+    <div class="branch-header-text">
+      <div class="branch-label">Branch · Self-Awareness</div>
+      <h2>Whose Perspective Do You Take on Yourself?</h2>
+    </div>
+  </div>
+  <div class="branch-intro" data-b="4">If the interdependent self is constantly tracking how it fits in with others, then the habitual perspective on the self should look more like an outside observer's view — and that prediction is testable in memory imagery, in self-prediction accuracy, and most strikingly in what happens when you put a person in front of a mirror.</div>
+
+  <!-- Concept 17 -->
+  <details class="concept-card" data-b="4" data-text="subjective self awareness inside out i perspective">
+    <summary>
+      <span class="concept-num">17</span>
+      <span class="concept-title">Subjective Self-Awareness</span>
+      <span class="concept-tag">Self-Awareness</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The state of considering oneself from the inside out — the perspective of the subject, the "I" who observes and interacts with the world. In this state, attention is on the outside world and one is largely unaware of oneself.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Subjective self-awareness is the default for someone absorbed in a task. You are aware of the world, not of yourself. When asked to evaluate yourself in this state, the standards used are your own internal ones — and self-evaluations tend to be relatively unaffected by how others perceive you.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A person engrossed in writing an essay is in subjective self-awareness — focused on the page, not on themselves.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Distinguish subjective and objective self-awareness."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Subjective self-awareness is the inside-out perspective in which the self is the experiencing subject and attention is directed outward at the world. Objective self-awareness is the outside-in perspective in which the self is treated as an object that others can observe and evaluate. The two states make different standards salient — internal ones in the subjective state, external ones (audience, judge) in the objective state — and produce systematically different self-evaluations.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The opposite mode — viewing yourself as others might — is the one that becomes culturally consequential.</p>
+
+  <!-- Concept 18 -->
+  <details class="concept-card" data-b="4" data-text="objective self awareness outside in me observed">
+    <summary>
+      <span class="concept-num">18</span>
+      <span class="concept-title">Objective Self-Awareness</span>
+      <span class="concept-tag">Self-Awareness</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The state of considering oneself from the outside in — the perspective of an object, the "me" that is observed and evaluated by others. One becomes conscious of how one is being seen.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>In this state, the relevant standards are the standards of an audience or judge. Westerners placed in objective self-awareness become more self-critical because they imagine standards higher than their current performance. Heine notes that the person fitting in with others would be in this state much of the time, monitoring how they are being perceived.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">Hearing your own voice on a recording, seeing yourself on video, or seeing yourself in a mirror — each one shifts you into objective self-awareness.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why does objective self-awareness predict more self-criticism in Westerners?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">In objective self-awareness, one adopts the perspective of an audience or judge. Because audiences typically apply standards higher than the person's current performance, taking the audience perspective makes the gap between current self and ideal self salient — the actual-ideal self-discrepancy widens. Westerners, who habitually operate in subjective self-awareness, experience a clear shift when stimuli (mirror, camera, recording) move them into objective self-awareness, and this shift produces measurable increases in self-criticism (Duval &amp; Wicklund, 1972; Ickes, Wicklund &amp; Ferris, 1973).</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 19 -->
+  <details class="concept-card" data-b="4" data-text="kim cohen au 2010 hong kong creativity bogus test outside in">
+    <summary>
+      <span class="concept-num">19</span>
+      <span class="concept-title">Kim, Cohen &amp; Au (2010) — Hong Kong vs. American Self-Evaluation</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study using a bogus creativity test in which Hong Kong and American university students received two scores (one excellent, one average). Through a staged scheme, one of those scores was revealed to a confederate. Participants then evaluated their own creativity.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>American self-evaluations were largely unaffected by which score the confederate had seen — Americans evaluated themselves on internal standards (inside-out). Hong Kong participants' self-evaluations rose when their excellent score had been seen and dropped when their average score had been seen — they evaluated themselves through what they believed others knew about them (outside-in). Seo, Kim, Tam &amp; Rozin (2016) showed the effect grows with audience size.</p>
+      </div>
+      <div class="mini-svg">
+        <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="200" x2="580" y2="200" stroke="#2a2723" stroke-width="1"/>
+          <line x1="80" y1="40" x2="80" y2="200" stroke="#2a2723" stroke-width="1"/>
+          <text x="50" y="46" fill="#9a948a" font-size="10" font-family="JetBrains Mono">5</text>
+          <text x="50" y="120" fill="#9a948a" font-size="10" font-family="JetBrains Mono">4</text>
+          <text x="50" y="204" fill="#9a948a" font-size="10" font-family="JetBrains Mono">3</text>
+          <!-- Hong Kong: large gap -->
+          <rect x="160" y="80" width="50" height="120" fill="#8898ad"/>
+          <rect x="220" y="170" width="50" height="30" fill="#dca376"/>
+          <!-- US: small/inverted -->
+          <rect x="400" y="55" width="50" height="145" fill="#8898ad"/>
+          <rect x="460" y="50" width="50" height="150" fill="#dca376"/>
+          <text x="215" y="220" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">Hong Kong</text>
+          <text x="455" y="220" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">United States</text>
+          <rect x="370" y="10" width="10" height="10" fill="#8898ad"/>
+          <text x="386" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">Other saw HIGH score</text>
+          <rect x="370" y="24" width="10" height="10" fill="#dca376"/>
+          <text x="386" y="33" fill="#e8e4dd" font-size="11" font-family="DM Sans">Other saw LOW score</text>
+          <text x="80" y="22" fill="#c9a96e" font-size="11" font-family="JetBrains Mono" letter-spacing="2">SELF-EVALUATION</text>
+        </svg>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Explain the Kim, Cohen &amp; Au (2010) result and the perspective it reveals."</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Kim, Cohen &amp; Au (2010) showed that American self-evaluations were largely unaffected by what a confederate had learned about the participant's performance, while Hong Kong self-evaluations rose when the confederate had seen the participant's high score and fell when the confederate had seen the average score. Americans evaluated themselves by internal standards (inside-out / subjective self-awareness); Hong Kong participants evaluated themselves by what others knew about them (outside-in / objective self-awareness). The result is consistent with the prediction that the interdependent self habitually takes the audience perspective on itself.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">If East Asians habitually take an outside-in perspective, that perspective should also leave a trace in how they remember themselves.</p>
+
+  <!-- Concept 20 -->
+  <details class="concept-card" data-b="4" data-text="first person memory third person memory cohen gunz 2002 imagery perspective">
+    <summary>
+      <span class="concept-num">20</span>
+      <span class="concept-title">First-Person vs. Third-Person Memory</span>
+      <span class="concept-tag">Self-Awareness</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">First-person memory contains imagery from the perspective one had as a subject at the time. Third-person memory contains imagery from an audience perspective — one sees oneself in the scene, as if watching from outside.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Cohen &amp; Gunz (2002) found that Asian Canadians produced significantly more third-person imagery in memories of being at the centre of attention than European Canadians did. Grossmann &amp; Kross (2010) found analogous effects comparing Russians and Americans. Wu &amp; Keysar (2007) showed that Asian Americans were better than European Americans at imagining what is being seen through someone else's eyes — the habitual outside-in perspective generalises into a perspective-taking skill.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">Asked to recall their high-school graduation, an Asian Canadian is more likely than a European Canadian to recall seeing themselves walk across the stage from the audience's vantage point.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"How does Cohen &amp; Gunz (2002) extend the inside-out / outside-in distinction beyond real-time self-evaluation?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Cohen &amp; Gunz (2002) showed that Asian Canadians produced more third-person imagery than European Canadians when remembering being at the centre of attention. The finding extends the inside-out / outside-in distinction beyond live self-evaluation into autobiographical memory: the habitual outside-in perspective leaks into how the past is reconstructed. The interdependent self does not just take the audience perspective in the moment; it stores past experiences in audience-perspective form. Wu &amp; Keysar (2007) further show this perspective-taking habit becomes a transferable skill — Asian Americans are better at inferring what someone else is currently seeing.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 21 -->
+  <details class="concept-card" data-b="4" data-text="self view accuracy epley dunning 2000 prediction">
+    <summary>
+      <span class="concept-num">21</span>
+      <span class="concept-title">Self-View Accuracy &amp; Epley &amp; Dunning (2000)</span>
+      <span class="concept-tag">Self-Awareness</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">The degree to which a person's view of themselves matches their actual behaviour. Epley &amp; Dunning (2000) found that Americans are quite accurate when predicting others' behaviour but systematically inaccurate when predicting their own.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>The asymmetry is informative: Americans see themselves the way they want to see themselves (subjectively), and see others as they more objectively are. The interesting cross-cultural prediction is that interdependent samples — who already view themselves through an outside-in lens — should be more accurate self-predictors than independent samples.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">An American predicting how generous they will be in an upcoming task tends to overestimate their generosity, even though they are reasonably accurate predicting another person's generosity in the same task.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"Why does the inside-out / outside-in distinction predict cultural differences in self-prediction accuracy?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">If independent selves view themselves subjectively (the way they want to see themselves) and view others objectively (more detached and analytical), they should be biased self-predictors but accurate other-predictors — exactly the asymmetry Epley &amp; Dunning (2000) document for Americans. Interdependent selves, who habitually take the outside-in perspective on themselves, should produce more accurate self-predictions because they are already evaluating themselves through a more detached lens. The Balcetis et al. (2008) study tests this prediction directly with children.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 22 -->
+  <details class="concept-card" data-b="4" data-text="balcetis dunning miller 2008 children candy mallorca prediction donations">
+    <summary>
+      <span class="concept-num">22</span>
+      <span class="concept-title">Balcetis, Dunning &amp; Miller (2008) — Children's Self-Predictions</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study at a summer school in Mallorca in which children from individualistic and collectivistic countries predicted how many of ten candies they would donate to a common pool, and were tested in that situation five days later.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Children from individualistic cultures donated <em>fewer</em> candies than they had predicted — they overestimated their own generosity. Children from collectivistic cultures donated about the same number as they had predicted. The collectivistic children were more accurate self-predictors, consistent with their habitually taking a more detached, outside-in perspective on themselves.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">An individualistic child who predicted she would donate seven candies actually donated four; a collectivistic child who predicted seven donated about seven.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"What does Balcetis, Dunning &amp; Miller (2008) tell us about the accuracy of self-views?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Balcetis, Dunning &amp; Miller (2008) found that children from individualistic cultures predicted they would donate more candies to a common pool than they actually did, while children from collectivistic cultures' predictions matched their behaviour. The result supports the inference that habitually viewing oneself from an outside-in perspective produces more accurate self-predictions, because that perspective resembles the more detached view applied to others. Self-view accuracy is therefore not a neutral cognitive ability but a function of which perspective on oneself a culture habituates.</p>
+      </div>
+    </div>
+  </details>
+  <p class="bridge">The cleanest way to test the inside-out / outside-in habit is to manipulate it directly. Mirrors do that — they reliably push Westerners into objective self-awareness. The question is what they do to people who are already there.</p>
+
+  <!-- Concept 23 -->
+  <details class="concept-card" data-b="4" data-text="duval wicklund 1972 mirror video camera audiotape objective self awareness stimuli">
+    <summary>
+      <span class="concept-num">23</span>
+      <span class="concept-title">Duval &amp; Wicklund (1972) — Stimuli that Induce Objective Self-Awareness</span>
+      <span class="concept-tag">Foundational Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A research tradition demonstrating that hearing one's own voice on a recording, seeing oneself on video, or seeing oneself in a mirror reliably puts a (Westerner) into a state of objective self-awareness.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Once in objective self-awareness, Westerners become measurably more self-critical (Ickes, Wicklund &amp; Ferris, 1973). They adopt the audience perspective, take on the role of judge, and conjure standards above their current performance. The size of the actual–ideal self-discrepancy increases.</p>
+      </div>
+      <div class="concept-section">
+        <span class="label">Example</span>
+        <p class="example-text">A Western student who is asked about themselves in front of a mirror evaluates themselves more harshly than the same student asked the same question without a mirror.</p>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"What classical effect did Duval &amp; Wicklund's tradition establish, and how does it set up Heine et al. (2008)?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Duval &amp; Wicklund (1972) and follow-up work established that mirrors, video cameras, and voice recordings induce objective self-awareness in Westerners and that this state increases self-criticism by widening the actual-ideal self-discrepancy. The finding sets up a sharp cross-cultural prediction: if East Asians already operate habitually in objective self-awareness, then mirrors should produce little or no additional shift in their self-evaluations. Heine et al. (2008) directly tested this prediction.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- Concept 24 -->
+  <details class="concept-card" data-b="4" data-text="heine takemoto moskalenko lasaleta henrich 2008 mirror japanese unaffected discrepancy">
+    <summary>
+      <span class="concept-num">24</span>
+      <span class="concept-title">Heine et al. (2008) — The Mirror That Did Nothing</span>
+      <span class="concept-tag">Key Study</span>
+      <span class="toggle-arrow">▾</span>
+    </summary>
+    <div class="concept-body">
+      <div class="definition-box">
+        <span class="label">Definition</span>
+        <span class="text">A study in which Japanese and American students were placed either in front of a mirror or not, and asked to evaluate themselves on a measure of actual-ideal self-discrepancy.</span>
+      </div>
+      <div class="concept-section">
+        <span class="label">Explanation</span>
+        <p>Americans became significantly more self-critical in front of the mirror — replicating Ickes, Wicklund &amp; Ferris (1973). Japanese self-evaluations were unaffected by the presence or absence of the mirror. Heine concludes that the habitual self-view of Japanese is already very similar to the perspective people have in front of a mirror; tellingly, Japanese and American self-discrepancies look quite similar <em>when</em> both are facing a mirror — Americans, when forced to consider themselves as object, end up looking like the Japanese baseline (<strong>Figure 6.14</strong>).</p>
+      </div>
+      <div class="mini-svg">
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="180" x2="580" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <line x1="80" y1="40" x2="80" y2="180" stroke="#2a2723" stroke-width="1"/>
+          <text x="50" y="46" fill="#9a948a" font-size="10" font-family="JetBrains Mono">1.4</text>
+          <text x="50" y="110" fill="#9a948a" font-size="10" font-family="JetBrains Mono">1.0</text>
+          <text x="50" y="184" fill="#9a948a" font-size="10" font-family="JetBrains Mono">0.6</text>
+          <!-- Americans: low without mirror, high with -->
+          <rect x="160" y="135" width="50" height="45" fill="#8fa388"/>
+          <rect x="220" y="55" width="50" height="125" fill="#dca376"/>
+          <!-- Japanese: similar high in both -->
+          <rect x="400" y="60" width="50" height="120" fill="#8fa388"/>
+          <rect x="460" y="68" width="50" height="112" fill="#dca376"/>
+          <text x="215" y="200" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">Americans</text>
+          <text x="455" y="200" fill="#9a948a" font-size="11" font-family="DM Sans" text-anchor="middle">Japanese</text>
+          <rect x="370" y="10" width="10" height="10" fill="#8fa388"/>
+          <text x="386" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">No mirror</text>
+          <rect x="450" y="10" width="10" height="10" fill="#dca376"/>
+          <text x="466" y="19" fill="#e8e4dd" font-size="11" font-family="DM Sans">Mirror</text>
+          <text x="80" y="22" fill="#c9a96e" font-size="11" font-family="JetBrains Mono" letter-spacing="2">ACTUAL-IDEAL DISCREPANCY</text>
+        </svg>
+      </div>
+      <div class="exam-box">
+        <span class="label">Exam Application</span>
+        <div class="q-prompt">"What does Heine et al. (2008) reveal about the cultural specificity of objective self-awareness?"</div>
+        <span class="a-label">Model Answer</span>
+        <p class="a-text">Heine et al. (2008) found that Americans showed the classic effect — significantly larger actual-ideal self-discrepancies in front of a mirror than without one — while Japanese self-evaluations were unaffected by the mirror. Strikingly, mirror-American discrepancies looked similar to baseline-Japanese discrepancies, suggesting that the Japanese habitual self-view already approximates the state Americans only enter when forced to consider themselves as an object. Objective self-awareness is therefore not a universally absent default that some stimuli induce; for the interdependent self, it is closer to the resting state, which is precisely why mirrors lose their power.</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================
+     SECTION 2: COMMON STUDENT MISTAKES
+============================================================ -->
+<section id="mistakes">
+  <h2><span class="section-num">2 · Pitfalls</span>Common Student Mistakes</h2>
+  <p class="section-lede">These are the misreadings that lose marks on exams. Each one is followed by the correction the chapter actually supports.</p>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 01 · Treating East Asians as "less consistent" or "unpredictable"</div>
+    <p class="why">It is tempting to read the Kanagawa et al. result as showing that East Asians have a fragmented or unstable self. This is exactly what Heine warns against.</p>
+    <p class="correct">East Asians are consistent in a different way. Their selves are stable <em>within</em> each relationship over time (the if-then profile, English &amp; Chen 2007/2011). What varies is which relational profile is active in a given context, not the content of any given profile. The self is structured, not fragmentary.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 02 · Concluding East Asians don't experience cognitive dissonance</div>
+    <p class="why">The Heine &amp; Lehman (1997b) result shows no rationalization in Japanese participants choosing for themselves. Students often generalise this to "no dissonance in East Asians."</p>
+    <p class="correct">East Asians do experience consistency motivation, but its target is socially indexed. They rationalize when choosing for others (Hoshino-Browne et al., 2005) and when considering decisions others would make (Kitayama, Snibbe &amp; Markus, 2004). Dissonance is preserved cross-culturally; what shifts is the unit one is being consistent with.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 03 · Confusing subjective and objective self-awareness with positive vs. negative</div>
+    <p class="why">Because objective self-awareness produces self-criticism in Westerners, students sometimes equate "subjective = positive, objective = negative."</p>
+    <p class="correct">The distinction is about <em>perspective</em>, not valence. Subjective = inside-out, attention on the world. Objective = outside-in, attention on the self as observed. The negative valence Westerners experience in objective self-awareness comes from comparing to higher standards, not from the perspective itself. Japanese, who habitually inhabit something like objective self-awareness, do not show the same self-criticism shift.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 04 · Reversing first-person and third-person memory</div>
+    <p class="why">The labels are easy to flip — students sometimes call audience-perspective imagery "first-person" because it feels more elaborate.</p>
+    <p class="correct">First-person memory = the imagery you originally experienced as the subject (your own viewpoint). Third-person memory = imagery you could not have actually seen — yourself in the scene, as if watching from outside. Cohen &amp; Gunz (2002) found Asian Canadians produced more third-person imagery, consistent with the outside-in perspective.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 05 · Treating "interdependent" as synonymous with "Asian"</div>
+    <p class="why">The chapter uses East Asian samples extensively, but the construct is broader.</p>
+    <p class="correct">Independent and interdependent selves are theoretical constructs, not regional labels. Cialdini et al. (1999) used Polish samples to demonstrate the same logic. Within any country there is variation, and within any individual there are situational shifts. The construct is the dimension; samples are illustrative.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 06 · Writing as if there is one "true self" waiting to be measured</div>
+    <p class="why">Trained on Western personality research, students often default to the assumption that the alone condition is the most "authentic" measurement.</p>
+    <p class="correct">There is no methodologically privileged context. Heine raises this explicitly: which context is the "true" Japanese self — alone, with peers, with a professor? The Western "true self" framing presupposes the independent self-concept it is supposed to measure. The interdependent self is correctly described by its set of relational profiles, not by averaging them away.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 07 · Ignoring that consistency norms are culturally tailored, not absent</div>
+    <p class="why">Students sometimes write "Poles don't care about consistency."</p>
+    <p class="correct">Cialdini et al. (1999) shows Poles are highly responsive to consistency information — but to <em>peer</em> consistency rather than self-consistency. The question is not whether consistency motivates behaviour but which consistency does. Marketers in collectivistic contexts who pitch self-consistency appeals will underperform; those who pitch peer-consistency appeals will succeed.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 08 · Misreading "Americans see themselves subjectively" as a flaw</div>
+    <p class="why">Epley &amp; Dunning (2000) shows Americans are inaccurate about themselves and accurate about others. Students sometimes treat this as a deficit specific to Americans.</p>
+    <p class="correct">It is a structural consequence of the inside-out perspective. People generally see themselves as they want to be seen, and others more objectively. The interesting cultural finding (Balcetis et al., 2008) is that the outside-in perspective on the self reduces this asymmetry — collectivistic children predicted their own behaviour more accurately because they were already viewing themselves through a more detached lens.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 09 · Assuming the mirror effect is universal because it has been replicated for fifty years</div>
+    <p class="why">The Duval &amp; Wicklund tradition is so well-established that students treat the mirror-induced self-criticism finding as a baseline fact about humans.</p>
+    <p class="correct">Heine et al. (2008) directly demonstrates the cultural boundary: the mirror increases self-criticism in Americans but does nothing for Japanese. Apparent universality often reflects a uniform sampling base rather than a universal mechanism. This is the core methodological lesson of the whole chapter.</p>
+  </div>
+
+  <div class="mistake-card">
+    <div class="mistake-h">Mistake 10 · Treating cultural differences as differences in "amount" rather than "kind"</div>
+    <p class="why">It is easy to write "Japanese have less consistency / less self-positivity / less dissonance," as if East Asian psychology were just a dimmed-down version of Western psychology.</p>
+    <p class="correct">The chapter consistently shows the differences are structural, not quantitative. East Asians are consistent <em>differently</em>, rationalize <em>for whom</em> differently, take a <em>different</em> habitual perspective on the self. Treating the contrast as more vs. less misses what cultural psychology is actually claiming — that there are different organisations of self, not the same self at different intensities.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: REFERENCE TABLES
+============================================================ -->
+<section id="tables">
+  <h2><span class="section-num">3 · Quick Reference</span>Tables</h2>
+  <p class="section-lede">Compact comparison tables organised by the four branches.</p>
+
+  <div class="table-wrap">
+    <h3>Table A · Independent vs. Interdependent Self-Concept (Branch 1)</h3>
+    <table>
+      <thead>
+        <tr><th>Dimension</th><th>Independent</th><th>Interdependent</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Locus of self</td><td>Bounded internal attributes (traits, attitudes)</td><td>Relationships, roles, obligations</td></tr>
+        <tr><td>Stability across contexts</td><td>High — same self everywhere</td><td>Varies by context, stable within each relationship</td></tr>
+        <tr><td>Authentic self</td><td>Cross-situational consistency</td><td>Appropriate role-fit</td></tr>
+        <tr><td>Inconsistency reads as</td><td>Hypocrisy / inauthenticity</td><td>Social competence</td></tr>
+        <tr><td>Default self-awareness</td><td>Subjective (inside-out)</td><td>Objective (outside-in)</td></tr>
+        <tr><td>Memory perspective</td><td>More first-person imagery</td><td>More third-person imagery</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table B · Self-Consistency Findings (Branch 2)</h3>
+    <table>
+      <thead>
+        <tr><th>Study</th><th>What was tested</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Kanagawa, Cross &amp; Markus (2001)</td><td>TST in 4 contexts (professor, peer, group, alone)</td><td>Americans stable; Japanese varied substantially</td></tr>
+        <tr><td>Suh (2002)</td><td>Consistency × well-being / social skills / likability</td><td>Strong correlations for Americans (.44/.37/.33); weak for Koreans (.19/.12/–.02)</td></tr>
+        <tr><td>English &amp; Chen (2011)</td><td>Consistency × authenticity</td><td>Tied to authenticity for European Americans, not East Asians</td></tr>
+        <tr><td>English &amp; Chen (2007, 2011)</td><td>Within-relationship stability over time</td><td>"If-then" profile: relationship-specific selves stable across years</td></tr>
+        <tr><td>Effron, Markus, Jackman et al.</td><td>Hypocrisy judgments of inconsistent behaviour</td><td>Westerners harsher than people in Indonesia, India, Japan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table C · Cognitive Dissonance Across Cultures (Branch 3)</h3>
+    <table>
+      <thead>
+        <tr><th>Study</th><th>Comparison</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Festinger (1957) / Brehm (1956)</td><td>Foundational theory; baseline rationalization</td><td>People rationalize post-decision to reduce dissonance</td></tr>
+        <tr><td>Heine &amp; Lehman (1997b)</td><td>Japanese vs. Canadian, CD choice</td><td>Canadians rationalize; Japanese do not</td></tr>
+        <tr><td>Hoshino-Browne et al. (2005)</td><td>Choosing for self vs. for others</td><td>Japanese rationalize for others; Canadians rationalize for self</td></tr>
+        <tr><td>Kitayama, Snibbe &amp; Markus (2004)</td><td>Considering others' decisions</td><td>Japanese rationalize when considering others' choices</td></tr>
+        <tr><td>Cialdini et al. (1999)</td><td>Self-consistency vs. peer-consistency cue, US vs. Poland</td><td>Americans driven by self-cue; Poles driven by peer-cue</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table D · Subjective vs. Objective Self-Awareness (Branch 4)</h3>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Subjective (Inside-Out)</th><th>Objective (Outside-In)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pronoun</td><td>"I" — self as subject</td><td>"Me" — self as object</td></tr>
+        <tr><td>Attention</td><td>On the world</td><td>On the self being observed</td></tr>
+        <tr><td>Standards used</td><td>Internal, one's own</td><td>Audience / judge standards</td></tr>
+        <tr><td>Western default</td><td>Yes (habitual)</td><td>Triggered by mirror, camera, recording</td></tr>
+        <tr><td>East Asian default</td><td>Not the habitual mode</td><td>Closer to habitual mode</td></tr>
+        <tr><td>Effect of mirror on self-criticism</td><td>Increases sharply for Westerners</td><td>No change for Japanese (Heine et al., 2008)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table E · Self-Awareness Studies (Branch 4)</h3>
+    <table>
+      <thead>
+        <tr><th>Study</th><th>Comparison</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Kim, Cohen &amp; Au (2010)</td><td>Hong Kong vs. American — confederate sees score</td><td>HK self-evaluation depends on what other saw; American does not</td></tr>
+        <tr><td>Cohen &amp; Gunz (2002)</td><td>Asian Canadian vs. European Canadian memory imagery</td><td>Asian Canadians: more 3rd-person imagery when at centre of attention</td></tr>
+        <tr><td>Wu &amp; Keysar (2007)</td><td>Asian American vs. European American perspective-taking</td><td>Asian Americans better at imagining what others see</td></tr>
+        <tr><td>Epley &amp; Dunning (2000)</td><td>Americans predicting self vs. others' behaviour</td><td>Accurate about others, biased about self</td></tr>
+        <tr><td>Balcetis, Dunning &amp; Miller (2008)</td><td>Individualistic vs. collectivistic children — candy donation prediction</td><td>Collectivistic children more accurate predictors of own behaviour</td></tr>
+        <tr><td>Duval &amp; Wicklund (1972)</td><td>Mirror / camera / recording → objective self-awareness</td><td>Westerners become more self-critical</td></tr>
+        <tr><td>Heine, Takemoto, Moskalenko, Lasaleta &amp; Henrich (2008)</td><td>Japanese vs. American — mirror or no mirror</td><td>Americans more self-critical with mirror; Japanese unaffected</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table F · The Architecture of the Whole Argument</h3>
+    <table>
+      <thead>
+        <tr><th>Branch</th><th>Western prediction</th><th>East Asian / collectivistic finding</th><th>Reframing</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Self-consistency (B2)</td><td>Stable across contexts</td><td>Varies across contexts; stable within relationships</td><td>Different stability, not less</td></tr>
+        <tr><td>Cognitive dissonance (B3)</td><td>Universal post-decision rationalization</td><td>No self-rationalization; rationalization for others</td><td>Same motivation, different target</td></tr>
+        <tr><td>Self-evaluation (B4)</td><td>Internally anchored, audience-resistant</td><td>Audience-anchored, depends on what others know</td><td>Outside-in instead of inside-out</td></tr>
+        <tr><td>Mirror effect (B4)</td><td>Mirror increases self-criticism</td><td>Mirror has no effect on Japanese</td><td>Already in objective self-awareness</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: EXAM CHECKLIST
+============================================================ -->
+<section id="checklist">
+  <h2><span class="section-num">4 · Final Run-Through</span>Exam Preparation Checklist</h2>
+  <p class="section-lede">Tick each item once you can explain it from memory, in your own words, in under a minute.</p>
+
+  <div class="checklist-wrap">
+    <div class="checklist-col" data-b="1">
+      <h3>Branch 1 · Foundations</h3>
+      <div class="check-item"><input type="checkbox" id="c1-1"><label for="c1-1">I can define the independent self-concept and give one behavioural prediction it makes.</label></div>
+      <div class="check-item"><input type="checkbox" id="c1-2"><label for="c1-2">I can define the interdependent self-concept and give one behavioural prediction it makes.</label></div>
+      <div class="check-item"><input type="checkbox" id="c1-3"><label for="c1-3">I can explain why Markus &amp; Kitayama (1991) is treated as the field's theoretical hinge despite cultural psychology being older.</label></div>
+      <div class="check-item"><input type="checkbox" id="c1-4"><label for="c1-4">I can articulate why the independent/interdependent distinction is structural rather than quantitative.</label></div>
+    </div>
+
+    <div class="checklist-col" data-b="2">
+      <h3>Branch 2 · Self-Consistency</h3>
+      <div class="check-item"><input type="checkbox" id="c2-1"><label for="c2-1">I can describe Kanagawa et al. (2001) including the four contexts and the pattern in Table 6.2.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-2"><label for="c2-2">I can explain the methodological challenge to personality measurement that the Kanagawa result raises.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-3"><label for="c2-3">I can articulate the "true self" problem in my own words.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-4"><label for="c2-4">I can state the if-then profile (English &amp; Chen, 2007/2011) and explain why it shows East Asians are not unstable.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-5"><label for="c2-5">I can recall Suh's (2002) correlations and explain what they reveal about cultural value placed on consistency.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-6"><label for="c2-6">I can explain how English &amp; Chen (2011) shows authenticity is culturally calibrated.</label></div>
+      <div class="check-item"><input type="checkbox" id="c2-7"><label for="c2-7">I can describe the Effron et al. hypocrisy finding and link it to Western consistency norms.</label></div>
+    </div>
+
+    <div class="checklist-col" data-b="3">
+      <h3>Branch 3 · Cognitive Dissonance</h3>
+      <div class="check-item"><input type="checkbox" id="c3-1"><label for="c3-1">I can state Festinger's theory and define dissonance reduction.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-2"><label for="c3-2">I can explain why post-decisional rationalization is the cleanest test of dissonance.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-3"><label for="c3-3">I can describe Heine &amp; Lehman (1997b) — design and result — in three sentences.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-4"><label for="c3-4">I can describe Hoshino-Browne et al. (2005) and explain how it refines dissonance theory rather than refuting it.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-5"><label for="c3-5">I can describe Kitayama, Snibbe &amp; Markus (2004) and link it to Hoshino-Browne.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-6"><label for="c3-6">I can describe Cialdini et al. (1999), the self- vs. peer-consistency conditions, and the marketing implication.</label></div>
+      <div class="check-item"><input type="checkbox" id="c3-7"><label for="c3-7">I can summarise the unifying claim: same motivation, different target of consistency.</label></div>
+    </div>
+
+    <div class="checklist-col" data-b="4">
+      <h3>Branch 4 · Self-Awareness</h3>
+      <div class="check-item"><input type="checkbox" id="c4-1"><label for="c4-1">I can define subjective and objective self-awareness without using "positive/negative" as a shortcut.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-2"><label for="c4-2">I can describe Kim, Cohen &amp; Au (2010) — the bogus creativity test and the audience-knowledge result.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-3"><label for="c4-3">I can distinguish first-person and third-person memory and recall the Cohen &amp; Gunz (2002) result.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-4"><label for="c4-4">I can explain the Wu &amp; Keysar (2007) finding on perspective-taking accuracy.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-5"><label for="c4-5">I can summarise Epley &amp; Dunning (2000) on self-prediction asymmetry.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-6"><label for="c4-6">I can describe the Balcetis, Dunning &amp; Miller (2008) Mallorca study and what its result implies.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-7"><label for="c4-7">I can name the stimuli (mirror, camera, recording) that Duval &amp; Wicklund showed induce objective self-awareness.</label></div>
+      <div class="check-item"><input type="checkbox" id="c4-8"><label for="c4-8">I can describe Heine et al. (2008) and explain what the absence of a mirror effect for Japanese reveals.</label></div>
+    </div>
+
+    <div class="checklist-col" data-b="1" style="grid-column:1/-1">
+      <h3>Synthesis — to test before exam</h3>
+      <div class="check-item"><input type="checkbox" id="cs-1"><label for="cs-1">I can write one paragraph linking Branches 1 → 2 → 3 → 4 as a single argument about how the self-concept distinction generates downstream cultural variation.</label></div>
+      <div class="check-item"><input type="checkbox" id="cs-2"><label for="cs-2">I can name three findings that fail to replicate cleanly in East Asian samples and explain what unifies them.</label></div>
+      <div class="check-item"><input type="checkbox" id="cs-3"><label for="cs-3">I can give a coaching, marketing, or clinical example for at least three of the chapter's findings.</label></div>
+      <div class="check-item"><input type="checkbox" id="cs-4"><label for="cs-4">I can articulate what the chapter contributes to cultural psychology as a methodological corrective to universalist claims.</label></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Heine · Cultural Psychology · Chapter 6 · Self &amp; Personality · Study Guide
+</footer>
+
+<script>
+  // ---- branch filter ----
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.concept-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const branch = btn.dataset.branch;
+      cards.forEach(card => {
+        if (branch === 'all' || card.dataset.b === branch.replace('b','')) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // ---- live search ----
+  const search = document.getElementById('search');
+  search.addEventListener('input', e => {
+    const q = e.target.value.toLowerCase().trim();
+    cards.forEach(card => {
+      const text = (card.dataset.text + ' ' + card.textContent).toLowerCase();
+      if (!q || text.includes(q)) {
+        card.classList.remove('hidden');
+        if (q && q.length > 2) card.setAttribute('open','');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if (!q) {
+      cards.forEach(c => c.removeAttribute('open'));
+      const active = document.querySelector('.filter-btn.active');
+      if (active) active.click();
+    }
+  });
+
+  // ---- checklist persistence within session ----
+  document.querySelectorAll('.check-item input').forEach(input => {
+    input.addEventListener('change', () => {
+      // visual feedback only — no persistence between sessions to keep deck portable
+    });
+  });
+</script>
+
+</body>
+</html>
